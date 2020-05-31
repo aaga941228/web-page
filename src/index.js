@@ -18,8 +18,8 @@ app.engine(
 );
 app.set("view engine", ".hbs");
 app.use(morgan("dev"));
-app.use(require("./routes"));
 app.use("/statics", express.static(path.join(__dirname, "public")));
+app.use(require("./routes"));
 app.listen(port, () => {
   console.log(`server on port ${port}`);
 });
