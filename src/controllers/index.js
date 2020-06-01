@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 const config = require("../config");
 
 function index(req, res) {
-  res.render("index");
+  res.status(200).render("index");
 }
 
 async function sendEmail(req, res) {
@@ -25,14 +25,18 @@ async function sendEmail(req, res) {
     };
 
     const info = await transporter.sendMail(mailOptions);
-
-    console.log("Message sent: %s", info.messageId);
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-    res.send("ok");
+    res.status(200).redirect("success");
   } catch (err) {
-    console.error(err);
     res.status(500).send(err.message);
   }
 }
 
-module.exports = { index, sendEmail };
+function successEmail(req, res) {
+  res.render("success");
+}
+
+function notFound(req, res) {
+  res.render("notFound");
+}
+
+module.exports = { index, sendEmail, successEmail, notFound };

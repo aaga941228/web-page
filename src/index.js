@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const path = require("path");
 const { port } = require("./config");
+const { notFound } = require("./controllers");
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use("/statics", express.static(path.join(__dirname, "public")));
 app.use(require("./routes"));
+app.use(notFound);
 app.listen(port, () => {
   console.log(`server on port ${port}`);
 });

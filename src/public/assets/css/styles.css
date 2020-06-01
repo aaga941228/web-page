@@ -55,6 +55,10 @@ p {
   }
 }
 
+.notFound {
+  max-height: 100vh;
+}
+
 @media screen and (min-width: 992px) {
   .hero-title {
     font-size: 4rem;
