@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
-const { index } = require("../controllers");
+const { index, sendEmail } = require("../controllers");
 
-router.get("*", index);
+router.get("/", index).post("/send/email", sendEmail);
 
 module.exports = router;
