@@ -9,3 +9,58 @@ p {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
+
+.hero-title {
+  font-size: 2rem;
+}
+
+.hero-sub {
+  font-size: 1rem;
+}
+
+.section {
+  font-size: 1.8rem;
+}
+
+.profile-image {
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.image-fit {
+  object-fit: cover;
+}
+
+@media screen and (min-width: 576px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-sub {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    font-size: 2.5rem;
+  }
+
+  .profile-image {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-sub {
+    font-size: 2rem;
+  }
+}

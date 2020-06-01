@@ -28,8 +28,8 @@ function renderCourses(amount, list) {
   };
 }
 
-const renderSixCourses = renderCourses(6, coursesList);
-renderSixCourses();
+const renderEightCourses = renderCourses(8, coursesList);
+renderEightCourses();
 
 async function fetchWeather() {
   const data = await weather.getWeather();
@@ -66,5 +66,5 @@ document
 
 moreCoursesButton.addEventListener("click", function (e) {
   e.preventDefault();
-  renderSixCourses();
+  renderEightCourses();
 });

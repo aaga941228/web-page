@@ -1,71 +1,38 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<main role="main" class="text-secondary">
+
+  <div class="jumbotron m-0 " id="home">
+    <div class="container">
+      <div class="pt-5">
+      <h1 class="hero-title">Hello, I´m Alan</h1>
+      <p class="hero-sub">Thank´s for visiting my site!</p>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
-    <a class="navbar-brand" href="/">Alan Ayala</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">Abaout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#knowledge">Knowledge</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#courses">Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#more">More</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<main role="main">
-
-  <div class="jumbotron m-0" id="home">
-    <div class="container p-3">
-      <h1 class="display-3">Hello</h1>
-      <p>Thank´s for visiting my site! this is a website about me and my skills and knowledge.</p>
-    </div>
-  </div>
-
-  <div class="container my-5">
-
-    <div class="row d-flex flex-column my-5" id="about">
-      <h2 class="h1">About me</h2>
-      <div class="d-flex mt-3">
-        <div class="col-md-4">
-          <div class="card mb-4 box-shadow">
-            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeefamptext=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="/statics/assets/images/profile.jpg
+    <div class="card p-2 my-5" id="about">
+      <h2 class="section">About me</h2>
+      <div class="row mt-5">
+        <div class="col-12 col-md-4 mb-5">
+            <img class="card-img-top profile-image" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeefamptext=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="/statics/assets/images/profile.jpg
             " data-holder-rendered="true">
-          </div>
         </div>
-        <div class="col-md-8">
-          <div class="card mb-4 box-shadow">
-            <div class="card-body">
-              <p class="card-text">
-                I have a year studying programming at home, i am looking for an opportunity to develop and improve myskillsin an IT company, I am interested in developing backend with javascript, in my spare time I liketo watchweb application tutorials, i don't have work experience but I really want to learn newtechnologies, i havea truncated career of physics and mathematics at the IPN and a basic inglishknowledge, i would like tostudy mathematics in the future and compete in chess nationally</p>
-                <p>I am 25 years old and live in Merida, yucatan.</p>
-            </div>
+        <div class="col-12 col-md-8">
+          <div class="mb-4 box-shadow">
+            <p class="card-text">
+              Hi, i´m Alan, i´m 25 years old, rigth now i´m living in Merida, Yucatan, i like programming and play chess, ihave a year studying programming at home and i´m looking for an opportunity to develop and improve my skillsin an IT company, i´m interested in developing backend with javascript, in my spare time I like to watch webapplication tutorials, i don't have work experience but i really want to learn new technologies, i have atruncated career of physics and mathematics at the IPN and a basic english knowledge, i would like to studymathematics in the future and compete in chess nationally</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row my-5 d-flex flex-column" id="knowledge">
-      <h2 class="h1">Knowledge and skills</h2>
-      <div class="d-flex mt-3">
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem;">
+    <div class="my-5" id="knowledge">
+      <h2 class="section">Knowledge and skills</h2>    
+      <div class="row mt-3">
+        
+        <div class="col-12 col-md-4">
+          <div class="card mb-2">
             <div class="card-header">
               Frontend technologies
             </div>
@@ -82,8 +49,9 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem;">
+
+        <div class="col-12 col-md-4">
+          <div class="card mb-2">
             <div class="card-header">
               Backend technologies
             </div>
@@ -100,8 +68,8 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem;">
+        <div class="col-12 col-md-4">
+          <div class="card mb-2">
             <div class="card-header">
               Others technologies
             </div>
@@ -117,13 +85,13 @@
       </div>
     </div>
 
-    <div class="row d-flex flex-column my-5" id="contact">
-      <h2 class="h1">Contact</h2>
-      <div class="d-flex mt-3">
+    <div class="my-5" id="contact">
+      <h2 class="section">Contact</h2>
+      <div class="row mt-3">
         <div class="col">
-          <div class="card w-100" style="width: 18rem;">
+          <div class="card w-100">
             <div class="card-header">
-              Send me a message
+              <h3>Send me a message</h3>
             </div>
             <div class="card-body">
               <form action="/send/email" method="post">
@@ -145,7 +113,7 @@
                     <input type="text" class="form-control" id="messageInput" name="message" placeholder="Message">
                   </div>
                   <div class="col-sm-10 my-2">
-                    <input type="submit" name="submit" value="Submit" class="btn btn-info mb-2" >
+                    <input type="submit" name="submit" value="Submit" class="btn btn-dark mb-2" >
                   </div>
                 </div>
               </form>
@@ -155,31 +123,30 @@
       </div>
     </div>
 
-    <div class="row d-flex flex-column my-5" id="courses">
-      <h2 class="h1">Courses</h2>
-      <div class="album py-5">
-        <div class="row" id="courses-container" />
+    <div class="my-5" id="courses">
+      <h2 class="section">Courses</h2>
+      <div class="album">
+        <div class="row" id="courses-container"></div>
       </div>
-      <button type="button" class="btn btn-secondary btn-lg btn-block" id="more-courses">View more courses</button>
+      <button type="button" class="btn btn-dark btn-lg btn-block" id="more-courses">View more courses</button>
       <h4 id="message-courses"></h4>
     </div>
 
-    <div class="flex-column" id="more">
-      <h2 class="h1">More...</h2>
-      <div class="d-flex mt-3">
-        <div class="col-md-6 mx-auto text-center">
+    <div class="my-5" id="more">
+      <h2 class="section">More...</h2>
+
+      <div class="row mt-3">
+        <div class="col-12 col-md-6 text-center">
           <div class="card">
             <div class="card-body">
-              <h1 id="weather-location" class="h3"></h1>
-              <h3 id="weather-description" class="h4"></h3>
-              <h3 id="weather-string"></h3>
+              <h3 id="weather-location" class=""></h3>
+              <h4 id="weather-description" class=""></h4>
+              <h4 id="weather-string"></h4>
               <ul class="list-group mt-3">
                 <li id="weather-humidity" class="list-group-item"></li>
                 <li id="weather-wind" class="list-group-item"></li>
               </ul>
             </div>
-          </div>
-          <div class="card mt-4">
             <div class="card-body">
               <form id="w-form">
                 <div class="form-group">
@@ -200,20 +167,18 @@
           </div>
         </div>
 
-          <div class="col-md-6 mx-auto text-center">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="h2">Pokedex</h3>
-                <h4 id="pokemon-name"></h4>
-                <h4 id="pokemon-type"></h4>
-              </div>
-              <div class="card-body">    
-                <img src="" alt="pokemon" id="pokemon-image">
-              </div>
+        <div class="col-12 col-md-6 text-center">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="h2 ">Pokedex</h3>
+              <h4 id="pokemon-name"></h4>
+              <h4 id="pokemon-type"></h4>
             </div>
-            <div class="card mt-4">
-              <div class="card-body">
-                <form id="w-form">
+            <div class="card-body">    
+              <img src="" alt="pokemon" id="pokemon-image">
+            </div>
+            <div class="card-body">
+              <form id="w-form">
                 <div class="form-group">
                   <input
                     type="text"
