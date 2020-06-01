@@ -1,4 +1,5 @@
 const coursesContainer = document.querySelector("#courses-container");
+const moreCoursesButton = document.querySelector("#more-courses");
 const weatherStore = new WeatherStore();
 const city = weatherStore.getLocation();
 const weather = new Weather(city);
@@ -8,25 +9,27 @@ const poke = pokemonStore.getPokemon();
 const pokemon = new Pokemon(poke);
 const pokemonUi = new PokemonUi();
 
-function courseTemplate(course) {
-  return `
-    <div class="col-md-4">
-      <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="/statics/assets/images/certificates/${course.filename}" data-holder-rendered="true">
-      <div class="card-body">
-        <p class="card-text">${course.name}</p>
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/statics/assets/images/certificates/${course.filename}" target="_blank">View</a></button>
-        </div>
-      </div>
-    </div>
-  `;
+function renderCourses(amount, list) {
+  let index = 0;
+  let items = amount;
+  const coursesList = list;
+  return function () {
+    if (items >= coursesList.length) {
+      items = coursesList.length;
+      moreCoursesButton.classList.add("disabled");
+      moreCoursesButton.textContent = "No more courses";
+    }
+    for (let i = index; i < items; i++) {
+      const course = new Course(coursesList[i].name, coursesList[i].filename);
+      course.render(coursesContainer);
+    }
+    index += amount;
+    items += amount;
+  };
 }
 
-function renderCourses(courses) {
-  courses.map((course) => {
-    coursesContainer.innerHTML += courseTemplate(course);
-  });
-}
+const renderSixCourses = renderCourses(6, coursesList);
+renderSixCourses();
 
 async function fetchWeather() {
   const data = await weather.getWeather();
@@ -38,22 +41,30 @@ async function fetchPokemon() {
   pokemonUi.render(data);
 }
 
-renderCourses(courses);
 fetchWeather();
 fetchPokemon();
 
-document.getElementById("weather-change-btn").addEventListener("click", (e) => {
-  e.preventDefault();
-  const city = document.querySelector("#city").value;
-  weather.setLocation(city);
-  store.setLocation(city);
-  fetchWeather();
-});
+document
+  .querySelector("#weather-change-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    const city = document.querySelector("#city").value;
+    weather.setLocation(city);
+    weatherStore.setLocation(city);
+    fetchWeather();
+  });
 
-document.getElementById("pokemon-change-btn").addEventListener("click", (e) => {
+document
+  .querySelector("#pokemon-change-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    const poke = document.querySelector("#pokemon").value;
+    pokemon.setPokemon(poke);
+    pokemonStore.setPokemon(poke);
+    fetchPokemon();
+  });
+
+moreCoursesButton.addEventListener("click", function (e) {
   e.preventDefault();
-  const poke = document.querySelector("#pokemon").value;
-  pokemon.setPokemon(poke);
-  pokemonStore.setPokemon(poke);
-  fetchPokemon();
+  renderSixCourses();
 });
