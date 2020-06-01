@@ -1,6 +1,7 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const morgan = require("morgan");
+const helmet = require("helmet");
 const path = require("path");
 const { port } = require("./config");
 
@@ -18,6 +19,9 @@ app.engine(
 );
 app.set("view engine", ".hbs");
 app.use(morgan("dev"));
+app.use(helmet());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use("/statics", express.static(path.join(__dirname, "public")));
 app.use(require("./routes"));
 app.listen(port, () => {
