@@ -1,5 +1,8 @@
 const coursesContainer = document.querySelector("#courses-container");
 const moreCoursesButton = document.querySelector("#more-courses");
+const frontList = document.querySelector("#front-list");
+const backList = document.querySelector("#back-list");
+const othersList = document.querySelector("#others-list");
 const weatherStore = new WeatherStore();
 const city = weatherStore.getLocation();
 const weather = new Weather(city);
@@ -28,8 +31,14 @@ function renderCourses(amount, list) {
   };
 }
 
-const renderEightCourses = renderCourses(8, coursesList);
-renderEightCourses();
+function renderTehcnologies(technologies, nodes) {
+  const legnth = technologies.length;
+  for (let i = 0; i < legnth; i++) {
+    technologies[i].map(function (tech) {
+      nodes[i].innerHTML += `<li class="list-group-item"><p>${tech}</p></li>`;
+    });
+  }
+}
 
 async function fetchWeather() {
   const data = await weather.getWeather();
@@ -41,6 +50,9 @@ async function fetchPokemon() {
   pokemonUi.render(data);
 }
 
+renderTehcnologies(technologies, [frontList, backList, othersList]);
+const renderEightCourses = renderCourses(8, coursesList);
+renderEightCourses();
 fetchWeather();
 fetchPokemon();
 
