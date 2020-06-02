@@ -4,13 +4,14 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/",
-    "dev": "nodemon src/"
+    "start": "cross-env NODE_ENV=production node src/",
+    "dev": "cross-env NODE_ENV=development nodemon src/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
     "helmet": "^3.22.0",
