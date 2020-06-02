@@ -27,7 +27,7 @@ async function sendEmail(req, res) {
     const info = await transporter.sendMail(mailOptions);
     res.status(200).redirect("success");
   } catch (err) {
-    res.status(500).send(err.message);
+    next();
   }
 }
 
@@ -39,4 +39,8 @@ function notFound(req, res) {
   res.render("notFound");
 }
 
-module.exports = { index, sendEmail, successEmail, notFound };
+function internalError(req, res) {
+  res.render("internalError");
+}
+
+module.exports = { index, sendEmail, successEmail, notFound, internalError };

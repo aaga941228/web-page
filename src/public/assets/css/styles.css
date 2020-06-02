@@ -10,6 +10,10 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
+.hero-image {
+  background-image: url("/statics/assets/images/bg.jpg");
+}
+
 .hero-title {
   font-size: 2rem;
 }
@@ -34,6 +38,15 @@ p {
   object-fit: cover;
 }
 
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.error {
+  max-height: 100vh;
+}
+
 @media screen and (min-width: 576px) {
   .hero-title {
     font-size: 3rem;
@@ -53,10 +66,6 @@ p {
     width: 400px;
     height: 400px;
   }
-}
-
-.notFound {
-  max-height: 100vh;
 }
 
 @media screen and (min-width: 992px) {
