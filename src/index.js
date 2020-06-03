@@ -3,10 +3,11 @@ const exphbs = require("express-handlebars");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const path = require("path");
-const { port } = require("./config");
+const { PORT } = require("./config");
 const { notFound, internalError } = require("./controllers");
 
 const app = express();
+require("./database");
 
 app.set("views", path.join(__dirname, "views"));
 app.engine(
@@ -19,6 +20,7 @@ app.engine(
   })
 );
 app.set("view engine", ".hbs");
+
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(express.urlencoded({ extended: false }));
@@ -27,6 +29,7 @@ app.use("/statics", express.static(path.join(__dirname, "public")));
 app.use(require("./routes"));
 app.use(internalError);
 app.use(notFound);
-app.listen(port, () => {
-  console.log(`server on port ${port}`);
+
+app.listen(PORT, () => {
+  console.log(`server on PORT ${PORT}`);
 });

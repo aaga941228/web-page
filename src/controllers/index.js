@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const config = require("../config");
+const Admin = require("../models/admin");
 
 function index(req, res) {
   res.status(200).render("index");
@@ -43,4 +44,35 @@ function internalError(req, res) {
   res.render("internalError");
 }
 
-module.exports = { index, sendEmail, successEmail, notFound, internalError };
+function loginRender(req, res) {
+  res.render("login");
+}
+
+async function login(req, res) {
+  try {
+    const data = await Admin.findOne({
+      user: req.body.user,
+    });
+    if (data === null || data.password !== req.body.password) {
+      return res.status(403).send("Are you admin???");
+    }
+    res.status(200).redirect("/admin/dashboard");
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function dashboard(req, res) {
+  res.render("dashboard");
+}
+
+module.exports = {
+  index,
+  sendEmail,
+  successEmail,
+  notFound,
+  internalError,
+  login,
+  loginRender,
+  dashboard,
+};
