@@ -1,1 +1,33 @@
-<h1>dashboard</h1>
+<div class="container-fluid p-3">
+  <h1>Dashboard</h1>
+  <div class="row py-5">
+    <div class="col">
+      <div class="table-responsive-md">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Email</th>
+              <th scope="col">Name</th>
+              <th scope="col">Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each messages}}
+              <tr>
+                <td>{{email}}</td>
+                <td>{{name}}</td>
+                <td>{{message}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+  <div class="card-body">
+    <p>Visits: {{visits}}</p>
+    <p>Messages: {{messages.length}}</p>
+  </div>
+</div>
+</div>

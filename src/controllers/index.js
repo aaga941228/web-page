@@ -1,33 +1,26 @@
-const nodemailer = require("nodemailer");
 const config = require("../config");
-const Admin = require("../models/admin");
+const { Admin, Message, Visit } = require("../models");
 
-function index(req, res) {
+async function index(req, res) {
+  const visit = await Visit.findOne({
+    counter: "main",
+  });
+  visit.count++;
+  await visit.save();
   res.status(200).render("index");
 }
 
 async function sendEmail(req, res) {
   try {
-    const transporter = nodemailer.createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
-      secure: false,
-      auth: {
-        user: config.nodemailerUsername,
-        pass: config.nodemailerPassword,
-      },
+    const message = new Message({
+      email: req.body.email,
+      name: req.body.name,
+      message: req.body.message,
     });
-
-    const mailOptions = {
-      from: req.body.email,
-      to: config.personalEmail,
-      subject: req.body.name,
-      text: req.body.message,
-    };
-
-    const info = await transporter.sendMail(mailOptions);
+    await message.save();
     res.status(200).redirect("success");
   } catch (err) {
+    console.error(err);
     next();
   }
 }
@@ -59,11 +52,35 @@ async function login(req, res) {
     res.status(200).redirect("/admin/dashboard");
   } catch (err) {
     console.error(err);
+    next();
   }
 }
 
-function dashboard(req, res) {
-  res.render("dashboard");
+async function dashboard(req, res) {
+  try {
+    const messages = await Message.find();
+    const visits = await Visit.find({ counter: "main" });
+    res.render("dashboard", {
+      messages,
+      helpers: {
+        email: function () {
+          return this.email;
+        },
+        name: function () {
+          return this.name;
+        },
+        message: function () {
+          return this.message;
+        },
+        visits: function () {
+          return visits[0].count;
+        },
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    next();
+  }
 }
 
 module.exports = {
