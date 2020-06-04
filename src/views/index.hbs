@@ -1,226 +1,114 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Alan Ayala</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">Abaout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#knowledge">Knowledge</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#courses">Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#more">More</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/admin/login">Admins</a>
-        </li>
-      </ul>
-    </div>
+<header>
+  <div class="text">
+    <h1 class="title">Alan Ayala</h1>
+    <h3 class="subtitle">Javascript developer</h3>
   </div>
-</nav>
+  <div class="skew-down"></div>
+</header>
+<main>
 
-<main role="main" class="text-secondary">
-
-  <div class="jumbotron m-0 hero-image" id="home">
+  <section class="about">
     <div class="container">
-      <div class="pt-5">
-      <h1 class="hero-title">Hello, I´m Alan</h1>
-      <p class="hero-sub">Thank´s for visiting my site!</p>
+      <h2 class="about-me">About me</h2>
+      <p class="paragraph">
+        Hello, I am Alan, I am 25 years old, I am currently living in
+        Merida, Yucatan, I like to program and play chess, I have been
+        studying programming at home for a year and I am looking for an
+        opportunity to develop and improve my skills in an IT company, I am
+        interested in developing backend with javascript, in my spare time I
+        like to watch web application tutorials, I don't have work
+        experience but I have the best disposition to lock and learn new
+        technologies, I don't have a university degree and I have a basic
+        knowledge of English, my plans In the future they are studying
+        mathematics and competing in chess at a national level.
+      </p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="skew-up"></div>
+    <div class="images none">
+      <img src="/statics/assets/images/1.jpg" alt="" />
+    </div>
+    <div class="images">
+      <img src="/statics/assets/images/3.jpg" alt="" />
+    </div>
+    <div class="images">
+      <img src="/statics/assets/images/2.jpg" alt="" />
+      <div class="over">
+        <h2>Alan Ayala</h2>
+        <div></div>
       </div>
     </div>
-  </div>
-
-  <div class="container">
-
-    <div class="card p-2 my-5" id="about">
-      <h2 class="section">About me</h2>
-      <div class="row mt-5">
-        <div class="col-12 col-md-4 mb-5">
-            <img class="card-img-top profile-image" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeefamptext=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="/statics/assets/images/profile.jpg
-            " data-holder-rendered="true">
-        </div>
-        <div class="col-12 col-md-8">
-          <div class="mb-4 box-shadow">
-            <p class="card-text">     
-              Hello, I am Alan, I am 25 years old, I am currently living in Merida, Yucatan, I like to program and play chess, I have been studying programming at home for a year and I am looking for an opportunity to develop and improve my skills in an IT company, I am interested in developing backend with javascript, in my spare time I like to watch web application tutorials, I don't have work experience but I have the best disposition to lock and learn new technologies, I don't have a university degree and I have a basic knowledge of English, my plans In the future they are studying mathematics and competing in chess at a national level.</p>
-          </div>
-        </div>
-      </div>
+    <div class="images">
+      <img src="/statics/assets/images/4.jpeg" alt="" />
     </div>
-
-    <div class="my-5" id="knowledge">
-      <h2 class="section">Knowledge and skills</h2>    
-      <div class="row mt-3" id="technologies-container">
-        
-        <div class="col-12 col-md-4">
-          <div class="card mb-2">
-            <div class="card-header">
-              Frontend technologies
-            </div>
-            <ul class="list-group list-group-flush" id="front-list">
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <div class="card mb-2">
-            <div class="card-header">
-              Backend technologies
-            </div>
-            <ul class="list-group list-group-flush" id="back-list">
-            </ul>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card mb-2">
-            <div class="card-header">
-              Others technologies
-            </div>
-            <ul class="list-group list-group-flush" id="others-list">
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="images none">
+      <img src="/statics/assets/images/5.jpeg" alt="" />
     </div>
+    <div class="skew-down"></div>
+  </section>
 
-    <div class="my-5" id="courses">
-      <h2 class="section">Courses</h2>
-      <div class="album">
-        <div class="row" id="courses-container"></div>
-      </div>
-      <button type="button" class="btn btn-dark btn-lg btn-block" id="more-courses">View more courses</button>
-      <h4 id="message-courses"></h4>
-    </div>
-
-    <div class="my-5" id="more">
-      <h2 class="section">More...</h2>
-
-      <div class="row mt-3">
-        <div class="col-12 col-md-6 text-center">
-          <div class="card">
-            <div class="card-body">
-              <h3 id="weather-location" class=""></h3>
-              <h4 id="weather-description" class=""></h4>
-              <h4 id="weather-string"></h4>
-              <ul class="list-group mt-3">
-                <li id="weather-humidity" class="list-group-item"></li>
-                <li id="weather-wind" class="list-group-item"></li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <form id="w-form">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="city"
-                    class="form-control"
-                    placeholder="Choose a city"
-                  />
-                </div>
-                <div class="form-group">
-                  <button class="btn btn-dark btn-block" id="weather-change-btn">
-                    Get weather
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
+  <section>
+    <div class="container">
+      <h2 class="about-me">Knowledge and skills</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="/statics/assets/images/html-tag.jpg" alt="" />
+          <h4>AlanAyala</h4>
+          <p>Frontend technologies</p>
+          <p>HTML, CSS, JS, React, Web API´s, PWA, SPA</p>
         </div>
-
-        <div class="col-12 col-md-6 text-center">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="h2 ">Pokedex</h3>
-              <h4 id="pokemon-name"></h4>
-              <h4 id="pokemon-type"></h4>
-            </div>
-            <div class="card-body">    
-              <img src="" alt="pokemon" id="pokemon-image">
-            </div>
-            <div class="card-body">
-              <form id="w-form">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="pokemon"
-                    class="form-control"
-                    placeholder="Choose a pokemon"
-                  />
-                </div>
-                <div class="form-group">
-                  <button class="btn btn-dark btn-block" id="pokemon-change-btn">
-                    Get pokemon
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
+        <div class="card">
+          <img src="/statics/assets/images/html-tag.jpg" alt="" />
+          <h4>Backend technologies</h4>
+          <p>NodeJS, Express, MongoDB, MySQL, API REST</p>
+        </div>
+        <div class="card">
+          <img src="/statics/assets/images/html-tag.jpg" alt="" />
+          <h4>Other technologies</h4>
+          <p>Linux, Windows, Terminal, Git, Github, Typescript</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="my-5" id="contact">
-      <h2 class="section">Contact</h2>
-      <div class="row mt-3">
-        <div class="col">
-          <div class="card w-100">
-            <div class="card-header">
-              <h3>Send me a message</h3>
-            </div>
-            <div class="card-body">
-              <form action="/send-email" method="post">
-                <div class="form-group row">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control-plaintext" id="emailInput" name="email"  placeholder="yourEmail@example.com">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="nameInput" class="col-sm-2 col-form-label">Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nameInput" name="name" placeholder="Name">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="messageInput" class="col-sm-2 col-form-label">Message</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="messageInput" name="message" placeholder="Message">
-                  </div>
-                  <div class="col-sm-10 my-2">
-                    <input type="submit" name="submit" value="Submit" class="btn btn-dark mb-2" >
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+  <section class="landing">
+    <div class="skew-up"></div>
+    <div class="container">
+      <h2 class="courses-title">Courses</h2>
+      <div class="cards" id="courses-container">
+
       </div>
+      <button class="button" id="more-courses">More courses</button>
     </div>
-    
-  </div> 
-  <hr>
+  </section>
+
 </main>
-
-
-<footer class="row mb-3 text-secondary">
-  <div class="col-12 d-flex justify-content-center">
-    <p class="mx-5 my-3"><a href="https://www.linkedin.com/in/alan-de-jesus-ayala-galvan-649440194/" target="_blank"><img src="/statics/assets/svg/linkedin-icon.svg" class="icon" alt="linkedin">  Linkedin</a></p>
-    <p class="mx-5 my-3"><a href="https://github.com/aaga941228" target="_blank"><img src="/statics/assets/svg/github-icon.svg" class="icon"  alt="github">  Github</a></p>
-  </div>
-  <div class="col-12 d-flex justify-content-center">
-    <p>This page was created with NodeJS, express, handlebars and bootstrap by Alan Ayala, 2020</p>
+<footer>
+  <div class="container">
+    <h2 class="footer-title">Contact me</h2>
+    <div class="footer">
+      <form action="/send-email" method="POST">
+        <input type="text" name="name" placeholder="Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <textarea
+          name="message"
+          cols="30"
+          rows="10"
+          placeholder="Ingrese su mensaje..."
+        ></textarea>
+        <input type="submit" value="Enviar" />
+      </form>
+    <div class="social">
+      <p><a href="https://www.linkedin.com/in/alan-de-jesus-ayala-galvan-649440194/" target="_blank"><img src="/statics/assets/svg/linkedin-icon.svg" class="icon" alt="linkedin"> Linkedin</a></p>
+      <p><a href="https://github.com/aaga941228" target="_blank"><img src="/statics/assets/svg/github-icon.svg" class="icon"  alt="github"> Github</a></p>
+    </div>
+    </div>
   </div>
 </footer>
+<div class="go-top-container">
+  <div class="go-top-button">
+    <img src="/statics/assets/svg/subir.svg" alt="">
+  </div>
+</div>

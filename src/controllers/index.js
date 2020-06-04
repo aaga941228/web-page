@@ -30,6 +30,7 @@ async function dashboard(req, res) {
     const messages = await Message.find();
     const visits = await Visit.find({ counter: "main" });
     res.render("dashboard", {
+      layout: "secondary",
       messages,
       helpers: {
         email: function () {
@@ -53,7 +54,7 @@ async function dashboard(req, res) {
 }
 
 function successEmail(req, res) {
-  res.render("success");
+  res.render("success", { layout: "secondary" });
 }
 
 function notFound(req, res) {
@@ -65,7 +66,7 @@ function internalError(req, res) {
 }
 
 function loginRender(req, res) {
-  res.render("login");
+  res.render("login", { layout: "secondary" });
 }
 
 function logout(req, res) {

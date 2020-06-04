@@ -3,6 +3,7 @@ const passport = require("passport");
 const router = Router();
 const {
   index,
+  home,
   sendEmail,
   successEmail,
   loginRender,

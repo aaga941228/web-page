@@ -37,8 +37,8 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-app.use("/statics", express.static(path.join(__dirname, "public")));
 app.use(require("./routes"));
+app.use("/statics", express.static(path.join(__dirname, "public")));
 app.use(internalError);
 app.use(notFound);
 
