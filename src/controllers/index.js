@@ -25,22 +25,6 @@ async function sendEmail(req, res) {
   }
 }
 
-function successEmail(req, res) {
-  res.render("success");
-}
-
-function notFound(req, res) {
-  res.render("notFound");
-}
-
-function internalError(req, res) {
-  res.render("internalError");
-}
-
-function loginRender(req, res) {
-  res.render("login");
-}
-
 async function dashboard(req, res) {
   try {
     const messages = await Message.find();
@@ -66,6 +50,22 @@ async function dashboard(req, res) {
     console.error(err);
     next();
   }
+}
+
+function successEmail(req, res) {
+  res.render("success");
+}
+
+function notFound(req, res) {
+  res.render("notFound");
+}
+
+function internalError(req, res) {
+  res.render("internalError");
+}
+
+function loginRender(req, res) {
+  res.render("login");
 }
 
 function logout(req, res) {
