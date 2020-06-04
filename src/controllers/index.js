@@ -41,21 +41,6 @@ function loginRender(req, res) {
   res.render("login");
 }
 
-async function login(req, res) {
-  try {
-    const data = await Admin.findOne({
-      user: req.body.user,
-    });
-    if (data === null || data.password !== req.body.password) {
-      return res.status(403).send("Are you admin???");
-    }
-    res.status(200).redirect("/admin/dashboard");
-  } catch (err) {
-    console.error(err);
-    next();
-  }
-}
-
 async function dashboard(req, res) {
   try {
     const messages = await Message.find();
@@ -83,13 +68,18 @@ async function dashboard(req, res) {
   }
 }
 
+function logout(req, res) {
+  req.logout();
+  res.redirect("/admin/login");
+}
+
 module.exports = {
   index,
   sendEmail,
   successEmail,
   notFound,
   internalError,
-  login,
+  logout,
   loginRender,
   dashboard,
 };
