@@ -294,6 +294,12 @@ input[type="submit"] {
   width: 96px;
 }
 
+.submit {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 input[type="submit"]:hover {
   cursor: pointer;
 }
@@ -301,6 +307,8 @@ input[type="submit"]:hover {
 .social {
   display: flex;
   justify-content: space-around;
+  height: 80px;
+  align-content: flex-start;
 }
 
 .social p {

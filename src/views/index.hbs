@@ -55,7 +55,7 @@
       <div class="cards">
         <div class="card">
           <img src="/statics/assets/images/html-tag.jpg" alt="" />
-          <h4>AlanAyala</h4>
+          <h4>Frontend technologies</h4>
           <p>Frontend technologies</p>
           <p>HTML, CSS, JS, React, Web API´s, PWA, SPA</p>
         </div>
@@ -90,15 +90,18 @@
     <h2 class="footer-title">Contact me</h2>
     <div class="footer">
       <form action="/send-email" method="POST">
-        <input type="text" name="name" placeholder="Name" />
-        <input type="email" name="email" placeholder="Email" />
+        <input type="text" name="name" placeholder="Name" required/>
+        <input type="email" name="email" placeholder="Email" required/>
         <textarea
           name="message"
           cols="30"
           rows="10"
           placeholder="Ingrese su mensaje..."
+          required
         ></textarea>
-        <input type="submit" value="Enviar" />
+        <div class="submit">
+          <input type="submit" value="Enviar" />
+        </div>
       </form>
     <div class="social">
       <p><a href="https://www.linkedin.com/in/alan-de-jesus-ayala-galvan-649440194/" target="_blank"><img src="/statics/assets/svg/linkedin-icon.svg" class="icon" alt="linkedin"> Linkedin</a></p>

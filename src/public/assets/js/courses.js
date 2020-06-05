@@ -14,7 +14,7 @@ class Course {
           />
           <h4 class="courses-subtitle">${this.name}</h4>
         </a>
-      </div>;
+      </div>
     `;
   }
 
