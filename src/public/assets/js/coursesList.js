@@ -28,6 +28,14 @@ const coursesList = [
     filename: "diploma-scope.jpg",
   },
   {
+    name: "Server side render",
+    filename: "diploma-ssr.jpg",
+  },
+  {
+    name: "JQuery",
+    filename: "diploma-jquery-js.jpg",
+  },
+  {
     name: "Terminal",
     filename: "diploma-terminal.jpg",
   },

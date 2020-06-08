@@ -11,6 +11,7 @@ class Course {
           <img
           src="/statics/assets/images/certificates/${this.filename}"
           alt="${this.name}"
+          loading="lazy"
           />
           <h4 class="courses-subtitle">${this.name}</h4>
         </a>
